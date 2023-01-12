@@ -73,7 +73,6 @@ const ItemDetail: NextPage = () => {
               </p>
               <Link
                 legacyBehavior
-                legacyBehavior
                 href={`/users/profiles/${data?.product?.user?.id}`}
               >
                 <a className="text-xs font-medium text-gray-500">
@@ -151,7 +150,6 @@ const ItemDetail: NextPage = () => {
           <div className=" mt-6 grid grid-cols-2 gap-4">
             {data?.relatedProduct?.map((product) => (
               <Link
-                legacyBehavior
                 legacyBehavior
                 key={product.id}
                 href={`/product/${product?.id}`}

@@ -95,7 +95,6 @@ const CommunityPostDetail: NextPage = () => {
             </p>
             <Link
               legacyBehavior
-              legacyBehavior
               href={`/users/profiles/${data?.post?.user?.id}`}
             >
               <a className="text-xs font-medium text-gray-500">

@@ -17,17 +17,13 @@ const Streams: NextPage = () => {
     <Layout hasTabBar title="라이브">
       <div className=" divide-y-[1px] space-y-4">
         {data?.streams.map((stream) => (
-          <Link
-            legacyBehavior
-            legacyBehavior
-            key={stream.id}
-            href={`/streams/${stream.id}`}
-          >
+          <Link legacyBehavior key={stream.id} href={`/streams/${stream.id}`}>
             <a className="pt-4 block px-4">
               <div className="w-full relative overflow-hidden rounded-md shadow-sm bg-slate-300 aspect-video">
                 <Image
                   layout="fill"
                   src={`https://customer-m033z5x00ks6nunl.cloudflarestream.com/b236bde30eb07b9d01318940e5fc3eda/thumbnails/thumbnail.jpg?time=1s&height=270`}
+                  alt={""}
                 />
               </div>
               <h1 className="text-2xl mt-2 font-bold text-gray-900">
