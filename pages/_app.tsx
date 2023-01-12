@@ -1,8 +1,35 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { SWRConfig } from "swr";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <SWRConfig
+      value={{ fetcher: (url: string) => fetch(url).then((res) => res.json()) }}
+    >
+      <div className="w-full max-w-xl mx-auto">
+        <Component {...Component}></Component>
+      </div>
+      {/* <Script
+        src="https://developers.kakao.com/sdk/js/kakao.js"
+        strategy="lazyOnload"
+      />
+      <Script
+        src="https://connect.facebook.net/en_US/sdk.js"
+        onLoad={() => {
+          window.fbAsyncInit = function () {
+            FB.init({
+              appId: "your-app-id",
+              autoLogAppEvents: true,
+              xfbml: true,
+              version: "v15.0",
+            });
+          };
+        }}
+      /> */}
+    </SWRConfig>
+  );
 }
 
-export default MyApp
+export default MyApp;
